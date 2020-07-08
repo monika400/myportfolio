@@ -10,31 +10,51 @@
     <div id="content">
       <h1 style="background-color:Cyan;">Monika's Portfolio</h1>
       <p>This is My portfolio.</p>
-      <img src="images/selfie3.jpeg" alt="My selfie" height = "400",width = "500">
-      <p>Click here to get a random message:</p>
+      <img src="images/me.jpeg" alt="My selfie" style="width:100%">
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
-
-      <h2>About</h2>
-      <div id= "about">
-      <p>Monika is a girl who can find happiness in every situation.She is final year undergraduate student and currently persuing Electrical engeenering
+       <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> All</button>
+        <button class="btn" onclick="filterSelection('about')"> About</button>
+        <button class="btn" onclick="filterSelection('Technical Project')"> Technical Project</button>
+        <button class="btn" onclick="filterSelection('Hidden')"> Hidden</button>
+        </div>
+        <div class="row">
+        <div class="column about">
+        <div class="content">
+        <img src="images/selfie3.jpeg" alt="Monika" style="width:100%">
+        <h4>Monika</h4>
+        <p>Monika is a girl who can find happiness in every situation.She is final year undergraduate student and currently persuing Electrical engeenering
           from IIT Kanpur. She likes to code and intrested in implementation part of ML. She had done an internship with American Express
           as a Data Analyst. She had done some cool technical project.</p>
-      </div>
-      <h2>Technical Projects</h2>
-      <h3>Python Library for Data visualisation and Evaluation</h3>
-      <p> Created a library that will provide all required visualisation chart for data. Created a library that will provide all required model evaluation metric </p>
+        </div>
+        </div>
+        <div class="column Technical Project">
+        <div class="content">
+        <img src="images/tech.jpeg" alt="Project" style="width:100%">
+        <h4>Project</h4>
+        <h5>Python Library for Data visualisation and Evaluation</h5>
+        <p> Created a library that will provide all required visualisation chart for data. Created a library that will provide all required model evaluation metric </p>
 
-      <h3>Statistical study of bug localization techniques</h3>
-      <p>Ranked 25 metrics, which help in ranking the components of code based on bugginess. Used test-suites for ranking above 25 metrics by assuming flakiness in failing test cases. Compared the  metrics using p-values obtained from wilcoxon test and analysed them using visualisation. Analysed the ranking of metrics obtained with assuming flakiness and without flakiness in test suites</p>
+        <h5>Statistical study of bug localization techniques</h5>
+        <p>Ranked 25 metrics, which help in ranking the components of code based on bugginess. Used test-suites for ranking above 25 metrics by assuming flakiness in failing test cases. Compared the  metrics using p-values obtained from wilcoxon test and analysed them using visualisation. Analysed the ranking of metrics obtained with assuming flakiness and without flakiness in test suites</p>
       
-      <h3>Haptic wristband</h3>
-      <p>Fabricated wristbands that help us navigate to given destination using the Haptics nudge provided by bands. Bands were paired with a phone where an Android app processes data received from Google Maps and GPS. Arduino controlled bands containing Wifi module communicated with mobile via serial communication</p>
+        <h5>Haptic wristband</h5>
+        <p>Fabricated wristbands that help us navigate to given destination using the Haptics nudge provided by bands. Bands were paired with a phone where an Android app processes data received from Google Maps and GPS. Arduino controlled bands containing Wifi module communicated with mobile via serial communication</p>
        
-       <h3>Have a look on some of my projects</h3>
-       <a href="https://github.com/monika400/">Github</a>
-
-
+        <h5>Have a look on some of my projects</h5>
+        <a href="https://github.com/monika400/">Github</a>
+        </div>
+        </div>
+        <div class="column Hidden">
+        <div class="content">
+        <img src="images/yoga3.jpeg" alt="Yoga1" height = "500" >
+        <h4>Yoga</h4>
+        <p>Love to be Yoga Girl...</p>
+        <p>I am intrested in yoga and try different pose every weekend. I enjoy inversion as well as meditation.</p>
+        </div>
+        </div>
+        </div>
       <h2>Let us connect</h2>
       <a href="https://www.linkedin.com/in/monikaiitk/">On Linkedin?</a>
     </div>
