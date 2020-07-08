@@ -3,7 +3,34 @@
   margin-right: auto;
   width: 650px;
 }
-
+h1 {
+  color: blue;
+  text-align: center;
+}
+p {
+  color: grey;
+  font-family: verdana;
+  font-size: 20px;
+}
 #greeting-container {
   margin-top: 20px;
+}
+
+#about {
+  color: purple;
+}
+body {
+  background-color: honeydew;
+}
+a:link, a:visited {
+  background-color: khaki;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: khaki;
 }
