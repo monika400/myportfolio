@@ -3,6 +3,33 @@
   margin-right: auto;
   width: 650px;
 }
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 100%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-instagram {
+  background: palevioletred;
+  color: white;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.img-container {
+        text-align: center;
+      }
 h1 {
   color: blue;
   text-align: center;
@@ -22,18 +49,7 @@ p {
 body {
   background-color: honeydew;
 }
-a:link, a:visited {
-  background-color: khaki;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
 
-a:hover, a:active {
-  background-color: khaki;
-}
 * {
   box-sizing: border-box;
 }
