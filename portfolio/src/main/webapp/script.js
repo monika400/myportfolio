@@ -27,47 +27,48 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+const navbar = document.querySelector(".navbar");
+const navbarOffsetTop = navbar.offsetTop;
+const sections = document.querySelectorAll("section");
+const navbarLinks = document.querySelectorAll(".navbar-link");
+const progress = document.querySelector(".progress-bars-wrapper");
+const progressBarPercents = [97, 89, 85, 87, 80, 70, 50];
 
-filterSelection("all") // Execute the function and show all columns
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    remove(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) add(x[i], "show");
-  }
-}
-function add(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
+window.addEventListener("scroll", () => {
+  mainFn();
+});
 
-// Hide elements that are not selected
-function remove(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
+const mainFn = () => {
+  if (window.pageYOffset >= navbarOffsetTop) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
   }
-  element.className = arr1.join(" ");
-}
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+
+  sections.forEach((section, i) => {
+    if (window.pageYOffset >= section.offsetTop - 10) {
+      navbarLinks.forEach((navbarLink) => {
+        navbarLink.classList.remove("change");
+      });
+      navbarLinks[i].classList.add("change");
+    }
   });
-}
+
+  if (window.pageYOffset + window.innerHeight >= progress.offsetTop) {
+    document.querySelectorAll(".progress-percent").forEach((el, i) => {
+      el.style.width = `${progressBarPercents[i]}%`;
+      el.previousElementSibling.firstElementChild.textContent =
+        progressBarPercents[i];
+    });
+  }
+};
+
+mainFn();
+
+window.addEventListener("resize", () => {
+  window.location.reload();
+});
+
+  
+
+

@@ -1,109 +1,19 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
 }
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 100%;
-}
-.fa:hover {
-    opacity: 0.7;
-}
-.fa-instagram {
-  background: palevioletred;
-  color: white;
-}
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-.img-container {
-        text-align: center;
-      }
-h1 {
-  color: blue;
-  text-align: center;
-}
-p {
-  color: grey;
-  font-family: verdana;
-  font-size: 20px;
-}
-#greeting-container {
-  margin-top: 20px;
-}
+.ab{
+    text-align: left;
+    font-weight: 700;
 
-#about {
-  color: blue;
-}
-body {
-  background-color: honeydew;
-}
 
-* {
-  box-sizing: border-box;
 }
-
-body {
-  background-color: #f1f1f1;
-  padding: 20px;
-  font-family: Arial;
-}
-
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 50px;
-  word-break: break-all;
-}
-.row {
-  margin: 8px -16px;
-}
-
-/* Add padding BETWEEN each column (if you want) */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 100%;
-  display: none; /* Hide columns by default */
-}
-
-/* Clear floats after rows */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.content {
-  background-color: white;
-  padding: 10px;
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
-/* Style the buttons */
 .btn {
   border: none;
   outline: none;
@@ -111,7 +21,7 @@ h1 {
   background-color: white;
   cursor: pointer;
 }
-
+ 
 /* Add a grey background color on mouse-over */
 .btn:hover {
   background-color: #ddd;
@@ -120,3 +30,137 @@ h1 {
   background-color: #666;
    color: white;
 }
+
+.abp{
+    text-align: left;
+}
+.section-1{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.3));
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section11 {
+  font-size: 2rem;
+  font-weight: 700;
+  color:black;
+  padding: 0 0.5rem;
+  margin-bottom: 0.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  border-bottom: 0.02rem solid #fff;
+  text-shadow: 0.02rem 0.02rem 0.02rem #555;
+  transform: skew(-10deg);
+  }
+  .team{
+      text-align: left;
+      width: 50%;
+      height: 50vh;
+  }
+.circular--square {
+  width: 25em;
+  height: 25em;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  opacity: 0.9;
+}
+.college {
+  font-size: 1rem;
+  color:black;
+  margin: 0.5rem 0;
+  padding: 0.2rem 2rem;
+  letter-spacing: 0.05rem;
+  transform: skew(-10deg);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar {
+  width: 100%;
+  height: 2rem;
+  margin: 0.5rem 0;
+  padding: 0.2rem 2rem;
+  position: absolute;
+  z-index: 200;
+  text-align: right;
+}
+.navbar-link {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin: 0 0.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.2s;
+}
+.change.navbar-link {
+  color:cadetblue;
+}
+
+.navbar-link:hover {
+  color:cadetblue;
+}
+.navbar-link::before {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background-color: #fff;
+  position: absolute;
+  right: -15%;
+  bottom: -0.3rem;
+  transition: width 0.2s;
+}
+.change.navbar-link::before {
+  width: 130%;
+}
+
+.navbar-link:hover::before {
+  width: 130%;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: palevioletred;
+  color: white;
+}
+#my_centered_buttons { display: flex; justify-content: center; }
+
+
