@@ -8,6 +8,22 @@
     font-family: "Jost", sans-serif;
     font-weight: 400;
 }
+comment-element{
+  display: block;
+  background-color: white;
+  border-inline-start-color: plum;
+}
+textarea{
+    width: 50%;
+}
+
+input[type=submit]{
+  
+  border: none;
+  color:black;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
 a {margin-right: 20px;
 color: black;
 }
@@ -68,6 +84,7 @@ color: black;
      text-align: center;
 
  }
+ 
  .p1{
      font-size: 0.8rem;
      margin-left: 200px;

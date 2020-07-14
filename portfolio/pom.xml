@@ -8,6 +8,8 @@
   <version>1</version>
   <packaging>war</packaging>
 
+  
+
   <properties>
     <!-- This project uses Java 8 -->
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -17,6 +19,11 @@
   </properties>
 
   <dependencies>
+  <dependency>
+  <groupId>com.google.code.gson</groupId>
+  <artifactId>gson</artifactId>
+  <version>2.8.6</version>
+  </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -35,7 +42,7 @@
         <version>2.2.0</version>
         <configuration>
           <!-- TODO: set project ID. -->
-          <deploy.projectId>YOUR_PROJECT_ID_HERE</deploy.projectId>
+          <deploy.projectId>mrathore-sps-summer20</deploy.projectId>
           <deploy.version>1</deploy.version>
         </configuration>
       </plugin>

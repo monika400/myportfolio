@@ -27,6 +27,24 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+async function getComments() {
+  const response = await fetch('/data');
+  const comments = await response.json();
+  container=document.getElementById('comments-container');
+  comments.map(function(currcomment){
+        container.appendChild(
+            createElement(currcomment)
+        );
+  });
+}
+
+function createElement(text) {
+  const element = document.createElement('comment-element');
+  element.innerText = text;
+  return element;
+}
+
 const navbar = document.querySelector(".navbar");
 const navbarOffsetTop = navbar.offsetTop;
 const sections = document.querySelectorAll("section");
