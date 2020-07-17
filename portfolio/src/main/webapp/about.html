@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComments()">
     <div id="content">
         <nav class="navbar">
         <a href="index.html" class="navbar-link">Home</a>
@@ -17,15 +17,25 @@
       <br><br></br></br>
       <h1 class="ab">About</h1>
       <br></br>
-      <p class = "abp">Hi! Monika here Final Year Undergraduate Student in department of Electrical Engineering at IIT Kanpur.
-          <br></br> I am intrested in Machine Learning, Data Science and Algorithms. Always ready to learn and discuss on new ideas.
+      <p class = "abp">Hi! I am Final Year Undergraduate Student in department of Electrical Engineering at IIT Kanpur.
+          <br></br> I am intrested in Data Science, Machine Learning Algorithms and Coding.
           <br></br>
-          I tend to waste my time in practicing yoga, chatting with friends and watiching series.
+          I tend to waste my time in practicing yoga, reading novels and watching series.
+          <br></br>
+          I love to explore different fields. In my college, I joined the Athletics team, Science and technology clubs, Fine Art Club and Student Placement Office.
           </p>
         <br></br>
+        <br></br>
+        <br></br>
         
-        
+      <div id="content1">
       
+      <div id ="comments-container"></div>
+      <form action = "/data" method = "POST">
+      <textarea name="new-comment">Leave a comment</textarea>
+      <input type = "submit"/>
+      </form>
+      </div>
     </div>
   </body>
 </html>
