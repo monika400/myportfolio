@@ -5,46 +5,75 @@
     <title>Project</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
-    <div id="content">
-    <nav class="navbar">
-        <a href="index.html" class="navbar-link">Home</a>
-        <a href="about.html" class="navbar-link">About</a>
-        <a href="#" class="navbar-link">Project</a>
-        <a href="blog.html" class="navbar-link">Blog</a>
-        
-      </nav>
-      <br><br><br></br></br></br>
-      <h1 class = "abc">Project</h1>
-      <h2 class = "head2">Data visualisation and Evaluation metrics</h2>
-        <p class = "p1"> Created a Python library that will help data scientists to get all required visualisation charts for data in one go. 
-        <br>Created a Python library that help data scientist to predict the model and find the scores of different evaluation metrics</br></p>
- 
-        <h2 class = "head2">Statistical study of bug localization techniques</h2>
-        <p class = "p1">Ranked 25 metrics, which help in ranking the components of code based on bugginess.<br> 
-        Used test-suites for ranking above 25 metrics by assuming flakiness in failing test cases.</br> Compared the  metrics using p-values obtained from wilcoxon test and analysed them using visualisation.
-         <br>Analysed the ranking of metrics obtained with assuming flakiness and without flakiness in test suites</br></p>
-      
-        
+    <div class="navbar navbar-default">
+	    	<div class="container-fluid">
+	    		
+	    		<div class="collapse navbar-collapse" id="collapibleMenu">
+	    			<ul class="nav navbar-nav navbar-right">
+				        <li><a href="index.html">Home</a></li>
+				        <li><a href="about.html">About</a></li>
+				        <li><a href="#">Project</a></li>
+				        <li><a href="blog.html">Blog</a></li>
+				    </ul>
+				   
+	    		</div>
+	    	</div>
+	    </div>
+    <div class="container">
+
+   <!-- Add row for photos-->
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <div class="thumbnail">
+                <img src="images/Adata.jpg"> 
+                <h2>Data visualisation and Evaluation</h2>
+                     <p> Created a Python library that will help data scientists to get all required visualisation charts for data in one go. 
+                     <br>Created a Python library that help data scientist to predict the model and find the scores of different evaluation metrics</br></p>
 
 
-        <h2 class = "head2">Spectral learning approach to Range only SLAM</h2>
-        <p class = "p1">Presented a novel spectral learning algorithm for simultaneous localization and mapping (SLAM)
-        <br>Formulated it as matrix problem, where features of observations are related to higher dimensional state space
-        </br> Developed MATLAB code to estimate robot's trajectory and the location of landmarks.</p>
-        <h2 class = "head2">Haptic wristband</h2>
-        <p class = "p1">Fabricated wristbands that help us navigate to given destination using the Haptics nudge provided by bands.<br>
-         Bands were paired with a phone where an Android app processes data received from Google Maps and GPS. Arduino controlled bands containing Wifi module communicated with mobile via serial communication</br></p>
-        <br></br>
-        <h2 class = "head3">View Here</h2>
-        <div id="my_centered_buttons">
-        <a href="https://github.com/monika400/" class = "fa fa-github" style="font-size:36px "></a>
+
+            </div>
+
         </div>
-        
-    
-        
-        
+
+        <div class="col-lg-4">
+
+            <div class="thumbnail">
+
+                <img src="images/static.jpg">
+                <h2>Statistical study of bug localization techniques</h2>
+                    <p>Ranked 25 metrics, which help in ranking the components of code based on bugginess.<br> 
+                    Used test-suites for ranking above 25 metrics by assuming flakiness in failing test cases.</br> Compared the  metrics using p-values obtained from wilcoxon test and analysed them using visualisation.
+                    <br>Analysed the ranking of metrics obtained with assuming flakiness and without flakiness in test suites</br></p>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="thumbnail">
+
+                <img src="images/haptic.jpg">
+                <h2 >Haptic wristband</h2>
+                    <p >Fabricated wristbands that help us navigate to given destination using the Haptics nudge provided by bands.<br>
+                    Bands were paired with a phone where an Android app processes data received from Google Maps and GPS. Arduino controlled bands containing Wifi module communicated with mobile via serial communication</br></p>
+                    <br></br>
+            </div>
+        </div>
     </div>
+    <div id="my_centered_buttons">
+        <a href="https://github.com/monika400/" class = "fa fa-github" style="font-size:36px "></a>
+    </div>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   </body>
 </html>

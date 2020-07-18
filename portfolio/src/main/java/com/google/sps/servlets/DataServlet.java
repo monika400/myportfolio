@@ -14,13 +14,15 @@
 
 package com.google.sps.servlets;
 
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
-
+import java.io.PrintWriter;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +31,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
-
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
@@ -39,17 +42,21 @@ public class DataServlet extends HttpServlet {
     private ArrayList<String> comments = new ArrayList<String>();
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+       
+         
+         
+         
          Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
         ArrayList<Comment> comments = new ArrayList<Comment>();
         for (Entity entity : results.asIterable()) {
-            String name= (String) entity.getProperty("name");
+            String email = (String) entity.getProperty("email");
             String commentText = (String) entity.getProperty("commentText");
             long timestamp = (long) entity.getProperty("timestamp");
 
-            Comment currcomment = new Comment(name, commentText, timestamp);
+            Comment currcomment = new Comment(email,commentText, timestamp);
             comments.add(currcomment);
         }
 
@@ -63,12 +70,24 @@ public class DataServlet extends HttpServlet {
     
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;");
+        PrintWriter out = response.getWriter();
+        UserService userService = UserServiceFactory.getUserService();
+        String email = "";
+        if (userService.isUserLoggedIn()){
+             email = userService.getCurrentUser().getEmail();
+        }
+        
+        
+        
+        
         String newComment = request.getParameter("new-comment");
-         String newName = request.getParameter("new-name");
+        
+    
         
 
         Entity commentEntity = new Entity("Comment");
-        commentEntity.setProperty("new-comment", newComment);
+        commentEntity.setProperty("email",email);
         commentEntity.setProperty("commentText", newComment);
         commentEntity.setProperty("timestamp", System.currentTimeMillis());
 
@@ -91,12 +110,12 @@ public class DataServlet extends HttpServlet {
 }
 class Comment {
 
-  private String name;
+  private String email; 
   private String commentText;
   private long timestamp;
 
-  public Comment(String name, String commentText, long timestamp) {
-    this.name = name;
+  public Comment(String email,String commentText, long timestamp) {
+    this.email = email;
     this.commentText = commentText;
     this.timestamp = timestamp;
   }

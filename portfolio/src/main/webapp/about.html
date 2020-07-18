@@ -3,39 +3,55 @@
     <meta charset="UTF-8">
     <title>About me</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getComments()">
-    <div id="content">
-        <nav class="navbar">
-        <a href="index.html" class="navbar-link">Home</a>
-        <a href="#" class="navbar-link">About</a>
-        <a href="project.html" class="navbar-link">Project</a>
-        <a href="blog.html" class="navbar-link">Blog</a>
-        
-      </nav>
+  <body onload="getComments()" >
+       <!-- Navigation bar-->
+       <div class="navbar navbar-default">
+	    	<div class="container-fluid">
+	    		
+	    		<div class="collapse navbar-collapse" id="collapibleMenu">
+	    			<ul class="nav navbar-nav navbar-right">
+				        <li><a href="index.html">Home</a></li>
+				        <li><a href="#">About</a></li>
+				        <li><a href="project.html">Project</a></li>
+				        <li><a href="blog.html">Blog</a></li>
+				    </ul>
+				   
+	    		</div>
+	    	</div>
+	    </div>
       <br><br></br></br>
       <h1 class="ab">About</h1>
       <br></br>
-      <p class = "abp">Hi! I am Final Year Undergraduate Student in department of Electrical Engineering at IIT Kanpur.
-          <br></br> I am intrested in Data Science, Machine Learning Algorithms and Coding.
-          <br></br>
-          I tend to waste my time in practicing yoga, reading novels and watching series.
-          <br></br>
-          I love to explore different fields. In my college, I joined the Athletics team, Science and technology clubs, Fine Art Club and Student Placement Office.
-          </p>
-        <br></br>
-        <br></br>
-        <br></br>
+      <p class = "abp">Hi! I am Final Year Undergraduate Student in department of Electrical Engineering at IIT Kanpur.</p>
+      <p class = "abp"> I am intrested in Data Science, Machine Learning Algorithms and Coding.</p>
+      <p class = "abp"> I tend to waste my time in practicing yoga, reading novels and watching series.</p>
+         
         
+      <br>  
+      
       <div id="content1">
       
       <div id ="comments-container"></div>
       <form action = "/data" method = "POST">
-      <textarea name="new-comment">Leave a comment</textarea>
-      <input type = "submit"/>
+      
+      
+      <textarea name="new-comment"  onfocus="if(this.value==this.defaultValue)this.value='';">Your-Comment</textarea>
+       <button>Submit</button>
+      
       </form>
       </div>
+      
     </div>
+
+     <!-- jQuery CDN -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+    <!-- Bootstrap Js CDN -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>

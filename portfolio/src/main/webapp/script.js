@@ -27,13 +27,17 @@ async function getComments(){
       container.appendChild(createListElement(comment));
   });
 
-
+  
 }
 function createListElement(text) {
   const element = document.createElement('comment-element');
-  element.innerText = text.name + ": " + text.commentText;
+  element.innerText =  text.commentText ;
   return element;
 }
+
+
+
+
 
 const navbar = document.querySelector(".navbar");
 const navbarOffsetTop = navbar.offsetTop;
