@@ -31,10 +31,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
-import java.util.ArrayList;
-import com.google.gson.Gson;
+
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
@@ -74,6 +71,12 @@ public class DataServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         UserService userService = UserServiceFactory.getUserService();
         String email = "";
+        
+
+    if (!userService.isUserLoggedIn()) {
+      response.sendRedirect("/");
+      return;
+    }
         if (userService.isUserLoggedIn()){
              email = userService.getCurrentUser().getEmail();
         }
@@ -93,7 +96,7 @@ public class DataServlet extends HttpServlet {
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(commentEntity);
-        response.sendRedirect("/about.html");
+        response.sendRedirect("/index.html");
          
         
 

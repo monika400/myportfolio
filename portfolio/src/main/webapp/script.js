@@ -31,56 +31,37 @@ async function getComments(){
 }
 function createListElement(text) {
   const element = document.createElement('comment-element');
-  element.innerText =  text.commentText ;
+  //element.innerText =  text.commentText ;
   return element;
+}
+
+async function allowornot(){
+    await getComments();
+    const response = await fetch('/login');
+    const userResponse = await response.json();
+    const commentTextArea = document.getElementById('content1');
+    const logoutuser = document.getElementById('userlogout');
+    const loginUrl = document.getElementById('login-url');
+    const loginuser = document.getElementById('userlogin');
+    const logoutUrl = document.getElementById('logout-url');
+    
+    if (userResponse.Loggedin) {
+        loginuser.hidden = true;
+        logoutUrl.href = userResponse.userURL;
+        
+        
+     } 
+     else{
+        commentTextArea.hidden = true;
+        logoutuser.hidden = true;
+        loginUrl.href = userResponse.userURL;
+
+     }
 }
 
 
 
 
 
-const navbar = document.querySelector(".navbar");
-const navbarOffsetTop = navbar.offsetTop;
-const sections = document.querySelectorAll("section");
-const navbarLinks = document.querySelectorAll(".navbar-link");
-const progress = document.querySelector(".progress-bars-wrapper");
-const progressBarPercents = [97, 89, 85, 87, 80, 70, 50];
-
-window.addEventListener("scroll", () => {
-  mainFn();
-});
-
-const mainFn = () => {
-  if (window.pageYOffset >= navbarOffsetTop) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-
-  sections.forEach((section, i) => {
-    if (window.pageYOffset >= section.offsetTop - 10) {
-      navbarLinks.forEach((navbarLink) => {
-        navbarLink.classList.remove("change");
-      });
-      navbarLinks[i].classList.add("change");
-    }
-  });
-
-  if (window.pageYOffset + window.innerHeight >= progress.offsetTop) {
-    document.querySelectorAll(".progress-percent").forEach((el, i) => {
-      el.style.width = `${progressBarPercents[i]}%`;
-      el.previousElementSibling.firstElementChild.textContent =
-        progressBarPercents[i];
-    });
-  }
-};
-
-mainFn();
-
-window.addEventListener("resize", () => {
-  window.location.reload();
-});
-
-  
 
 
