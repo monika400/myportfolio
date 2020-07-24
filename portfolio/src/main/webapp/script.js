@@ -15,14 +15,54 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+
+ window.customElements.define('comment-element', class extends HTMLElement {'p'});
+async function getComments(){
+  const response = await fetch('/data');
+  const comments = await response.json();
+  container = document.getElementById('comments-container'); 
+  comments.forEach((comment)=>{
+      container.appendChild(createListElement(comment));
+  });
+
+  
 }
+function createListElement(text) {
+  const element = document.createElement('comment-element');
+  element.innerText = text.email +":" + text.commentText ;
+  return element;
+}
+
+async function allowornot(){
+    await getComments();
+    const response = await fetch('/login');
+    const userResponse = await response.json();
+    const commentTextArea = document.getElementById('content1');
+    const logoutuser = document.getElementById('userlogout');
+    const loginUrl = document.getElementById('login-url');
+    const loginuser = document.getElementById('userlogin');
+    const logoutUrl = document.getElementById('logout-url');
+    
+    
+    if (userResponse.LoggedIn) {
+        loginuser.hidden = true;
+        logoutUrl.href = userResponse.userURL;
+        
+        
+     } 
+     else{
+        logoutuser.hidden = true;
+        commentTextArea.hidden = true;
+        loginUrl.href = userResponse.userURL;
+
+     }
+}
+
+
+
+
+
+
+
