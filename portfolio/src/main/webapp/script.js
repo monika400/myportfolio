@@ -31,7 +31,7 @@ async function getComments(){
 }
 function createListElement(text) {
   const element = document.createElement('comment-element');
-  //element.innerText =  text.commentText ;
+  element.innerText = text.email +":" + text.commentText ;
   return element;
 }
 
@@ -45,15 +45,16 @@ async function allowornot(){
     const loginuser = document.getElementById('userlogin');
     const logoutUrl = document.getElementById('logout-url');
     
-    if (userResponse.Loggedin) {
+    
+    if (userResponse.LoggedIn) {
         loginuser.hidden = true;
         logoutUrl.href = userResponse.userURL;
         
         
      } 
      else{
-        commentTextArea.hidden = true;
         logoutuser.hidden = true;
+        commentTextArea.hidden = true;
         loginUrl.href = userResponse.userURL;
 
      }

@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="script.js"></script>
   </head>
-  <body >
+  <body onload="allowornot()" >
        <!-- Navigation bar-->
+       
        <div class="navbar navbar-default">
 	    	<div class="container-fluid">
 	    		
@@ -22,6 +23,7 @@
 	    		</div>
 	    	</div>
 	    </div>
+      <section class = "about1">
       <br><br></br></br>
       <h1 class="ab">About</h1>
       <br></br>
@@ -32,7 +34,26 @@
         
       <br>  
       
+      <div id="content1" style: "opacity: 0.6">
       
+      <div id ="comments-container"></div>
+      <form action = "/data" method = "POST">
+      
+      
+        <textarea id = "cmnt" name="new-comment"  placeholder= "your-comment" ></textarea>
+      
+        <button id = "comment-btn" type = "submit" style = "text-align: center">Submit</button>
+      
+      </form>
+      
+      </div>
+    <div id = "userlogin" style = "text-align: center">
+        for comment <a id = "login-url">login</a>
+     </div>
+    <div id = "userlogout" style = "text-align: center">
+        <a id = "logout-url">logout</a>
+    </div>
+      </section> 
      <!-- jQuery CDN -->
 
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
